@@ -6,6 +6,11 @@ This is the source code for the http://coins.fedecarg.com webapp.
 
 Zend Framework 2 requires PHP 5.3.3 or later.
 
+## Main classes
+
+* [Currency controller](https://github.com/fedecarg/zf-coin-algorithm/tree/master/src/module/Application/src/Application/Controller)
+* [Currency library](https://github.com/fedecarg/zf-coin-algorithm/tree/master/src/module/Application/src/Application/Library/Currency) 
+
 ## Installation
 
 ### Using Composer
@@ -38,7 +43,7 @@ Set up a virtual host to point to the public/ directory of the project and you s
         </Directory>
     </VirtualHost>
 
-### Quality Assurance
+## Quality Assurance
 
 All the tools listed in the build.xml file can be installed using the PEAR Installer:
 
