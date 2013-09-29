@@ -1,14 +1,14 @@
-# ZF2 Coin Algorithm
+# Coin Algorithm (Change-making problem)
 
 This is the source code for the http://coins.fedecarg.com webapp.
 
-## Installation
-
-### Requirements
+## Requirements
 
 Zend Framework 2 requires PHP 5.3.3 or later.
 
-### Using Composer (recommended)
+## Installation
+
+### Using Composer
 
 The recommended way to get a working copy of this project is to clone the repository and manually invoke composer.phar.
 
