@@ -1,4 +1,4 @@
-# Coin Algorithm (Change-making problem)
+# Coin Algorithm
 
 This is the source code for the http://coins.fedecarg.com webapp.
 
@@ -12,20 +12,17 @@ Zend Framework 2 requires PHP 5.3.3 or later.
 
 The recommended way to get a working copy of this project is to clone the repository and manually invoke composer.phar.
 
-1. Clone the git repository
+Clone the git repository
 
     cd /path/to/workspace
     git clone git://github.com/fedecarg/zf-coin-algorithm.git
     cd zf-coin-algorithm
 
-2. Use composer to install dependencies
+Use composer to install dependencies
 
-	curl -s https://getcomposer.org/installer | php --
+    curl -s https://getcomposer.org/installer | php --
     php composer.phar self-update
-    php composer.phar install    
-
-
-### Virtual Host
+    php composer.phar install
 
 Set up a virtual host to point to the public/ directory of the project and you should be ready to go:
 
@@ -45,10 +42,10 @@ Set up a virtual host to point to the public/ directory of the project and you s
 
 All the tools listed in the build.xml file can be installed using the PEAR Installer:
 
-    sudo ear config-set auto_discover 1
+    sudo pear config-set auto_discover 1
     sudo pear install pear.phpqatools.org/phpqatools
 
-To execute unit tests:
+To execute the unit tests:
 
     cd /path/to/workspace/zf-coin-algorithm
     ant phpunit
@@ -63,12 +60,12 @@ To execute unit tests:
     [exec] 
     [exec] OK (18 tests, 18 assertions)
 
-To execute all tests:
+To execute all the QA tests:
 
     cd /path/to/workspace/zf-coin-algorithm
     ant
 
-### Author
+## Author
 
 Federico Cargnelutti @fedecarg
 
