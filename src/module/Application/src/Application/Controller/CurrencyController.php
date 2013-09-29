@@ -12,6 +12,7 @@ namespace Application\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Application\Library\Currency\CurrencyLoader;
+use Application\Library\Currency\UnexpectedValueException;
 
 class CurrencyController extends AbstractActionController
 {
