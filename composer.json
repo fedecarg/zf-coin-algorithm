@@ -1,0 +1,17 @@
+{
+    "name": "fedecarg/zf-coin-algorithm",
+    "description": "Coin Algorithm Application",
+    "license": "MIT",
+    "keywords": [
+        "coins",
+        "algorithm"
+    ],
+    "homepage": "https://github.com/fedecarg/zf-coin-algorithm",
+    "config": {
+        "vendor-dir": "src/vendor"
+    },
+    "require": {
+        "php": ">=5.3.3",
+        "zendframework/zendframework": "2.2.*"
+    }
+}

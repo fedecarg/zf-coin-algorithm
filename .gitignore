@@ -1,0 +1,11 @@
+*~
+.DS_Store
+.project
+.buildpath
+.settings
+.vagrant
+composer.lock
+build/api
+build/code-browser
+build/coverage
+src/vendor/*

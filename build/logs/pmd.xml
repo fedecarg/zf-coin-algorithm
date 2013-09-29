@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pmd version="1.5.0" timestamp="2013-09-30T01:14:04+02:00">
+  <file name="/Users/fede/GitHub/zf-coin-algorithm/src/module/Application/Module.php">
+    <violation beginline="17" endline="17" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $e. Configured minimum length is 3.
+    </violation>
+  </file>
+  <file name="/Users/fede/GitHub/zf-coin-algorithm/src/module/Application/src/Application/Library/Currency/CurrencyLoader.php">
+    <violation beginline="63" endline="63" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$locale'.
+    </violation>
+  </file>
+  <file name="/Users/fede/GitHub/zf-coin-algorithm/src/module/Application/test/ApplicationTest/Controller/CurrencyControllerTest.php">
+    <violation beginline="46" endline="46" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$result'.
+    </violation>
+  </file>
+  <file name="/Users/fede/GitHub/zf-coin-algorithm/src/module/Application/test/Bootstrap.php">
+    <violation beginline="70" endline="70" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$loader'.
+    </violation>
+  </file>
+</pmd>

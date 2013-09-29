@@ -1,0 +1,28 @@
+        <div class="content-wrapper">
+            <div class="content-text">
+                <div class="box">
+                    <p>How can a given amount of money be made with the least number of coins of given denominations?</p>
+                    <p class="small">Enter a number and find out:</p>
+
+                    <form id="currency" name="currency" action="/" method="post">
+                        <input name="amount" placeholder="Amount, e.g. &pound;1.89" type="text">
+                        <input name="subscribe" id="submit" value="Submit" type="submit">
+                    </form>
+                    
+                    <?php if (null !== $this->errorMessage): ?>
+                    <p class="small"><?php echo $this->errorMessage ?></p>
+                    <?php elseif (null !== $this->amount): ?>
+                    <p class="small">Minimum number of Sterling coins needed to make</p> 
+                    <p><?php echo $this->amount . ' = ' . $this->pence ?> pence</p>
+                    <p><?php
+                        $denominations = array();
+                        foreach($this->coins as $key => $value) {
+                            $denominations[] = '<strong>' . $key . '</strong>: ' . $value;
+                        }
+                        echo implode('&nbsp; / &nbsp;', $denominations);
+                    ?></p>
+                    <?php endif; ?>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
