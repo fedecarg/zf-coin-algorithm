@@ -13,7 +13,7 @@
                     <p class="small"><?php echo $this->errorMessage ?></p>
                     <?php elseif (null !== $this->amount): ?>
                     <p class="small">Minimum number of Sterling coins needed to make</p> 
-                    <p><?php echo $this->amount . ' = ' . $this->pence ?> pence</p>
+                    <p><?php echo $this->escapeHtml($this->amount . ' = ' . $this->pence) ?> pence</p>
                     <p><?php
                         $denominations = array();
                         foreach($this->coins as $key => $value) {
