@@ -9,6 +9,7 @@ Zend Framework 2 requires PHP 5.3.3 or later.
 ## Main classes
 
 * [Currency controller](https://github.com/fedecarg/zf-coin-algorithm/tree/master/src/module/Application/src/Application/Controller)
+* [Currency controller tests](https://github.com/fedecarg/zf-coin-algorithm/tree/master/src/module/Application/test/ApplicationTest/Controller)
 * [Currency library](https://github.com/fedecarg/zf-coin-algorithm/tree/master/src/module/Application/src/Application/Library/Currency) 
 
 ## Installation
