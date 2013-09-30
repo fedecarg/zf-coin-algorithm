@@ -12,7 +12,6 @@ namespace Application\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Application\Library\Currency\CurrencyLoader;
-use Application\Library\Currency\UnexpectedValueException;
 
 class CurrencyController extends AbstractActionController
 {
@@ -27,10 +26,10 @@ class CurrencyController extends AbstractActionController
             try {
                 $currency = $currencyLoader->getCurrencyByCode('GBP');
                 $result = $currency->getMinimumNumberOfCoins($request->getPost('amount'));
-            } catch (UnexpectedValueException $e) {
-                $errorMessage = 'The amount entered contains invalid characters';
-            } catch (\Exception $e) {
+            } catch (\InvalidArgumentException $e) {
                 $errorMessage = $e->getMessage();
+            } catch (\Exception $e) {
+                $errorMessage = $e->getMessage(); // todo: log Exception
             }
         }
 
