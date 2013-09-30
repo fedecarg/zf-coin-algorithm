@@ -10,7 +10,6 @@
 namespace Application\Library\Currency\GBP;
 
 use Application\Library\Currency\CurrencyAbstract;
-use Application\Library\Currency\UnexpectedValueException;
 
 class Currency extends CurrencyAbstract
 {
@@ -97,19 +96,15 @@ class Currency extends CurrencyAbstract
      *
      * @var string $targetAmount
      * @return array
-     * @throws UnexpectedValueException
+     * @throws InvalidArgumentException
      */
     public function getMinimumNumberOfCoins($targetAmount)
     {
         if (empty($targetAmount)) {
-            throw new UnexpectedValueException('The amount cannot be empty');
+            throw new \InvalidArgumentException('The amount cannot be empty');
         }
 
-        try {
-            $pence = $this->convertStringToInteger($targetAmount);
-        } catch (\InvalidArgumentException $e) {
-            throw new UnexpectedValueException('The amount entered contains invalid characters');
-        }
+        $pence = $this->convertAmountToPence($targetAmount);
 
         $amount = $pence;
         $coins = array();
@@ -129,29 +124,29 @@ class Currency extends CurrencyAbstract
     }
 
     /**
-     * Converts a given string to an integer number.
+     * Converts a given amount to an integer number.
      *
-     * @param string $string
+     * @param string $amount
      * @return integer
      * @throws InvalidArgumentException
      */
-    protected function convertStringToInteger($string)
+    protected function convertAmountToPence($amount)
     {
         $currencySign = $this->getCurrencySign();
-        $hasCurrencySign = mb_substr($string, 0, 1, 'utf-8') === $currencySign;
+        $hasCurrencySign = mb_substr($amount, 0, 1, 'utf-8') === $currencySign;
 
         // search and replace
-        $string = str_replace(array($currencySign, 'p'), '', $string);
-        if (! is_numeric($string)) {
-            throw new \InvalidArgumentException('Invalid number');
+        $amount = str_replace(array($currencySign, 'p'), '', $amount);
+        if (! is_numeric($amount)) {
+            throw new \InvalidArgumentException('The amount contains invalid characters');
         }
 
         // cast string to number
-        $string += 0;
-        if (is_float($string) || $hasCurrencySign) {
-            $string = sprintf("%01.2f", round($string, 2)) * 100;
+        $amount += 0;
+        if (is_float($amount) || $hasCurrencySign) {
+            $amount = sprintf("%01.2f", round($amount, 2)) * 100;
         }
 
-        return intval($string);
+        return intval($amount);
     }
 }
