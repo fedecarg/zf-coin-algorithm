@@ -34,7 +34,7 @@ class CurrencyLoader
      * Returns the Currency instance for the given currency code.
      *
      * @param string $currencyCode
-     * @return CounterAdapter
+     * @return CurrencyAbstract
      * @throws CurrencyNotFoundException
      */
     public function getCurrencyByCode($currencyCode)
@@ -57,7 +57,7 @@ class CurrencyLoader
      * Returns the Currency instance for the given locale.
      *
      * @param string $locale
-     * @return CounterAdapter
+     * @return CurrencyAbstract
      * @throws CurrencyNotFoundException
      */
     public function getCurrencyByLocale($locale)
